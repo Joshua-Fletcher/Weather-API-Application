@@ -9,12 +9,19 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Weather API Application</h1>
-    <input id="cityRequest" placeholder="Enter city: "><br>
-    <button onclick="getCity()" id="searchButton">Search</button>
-    <br><br>
-    <ul id="tempList"></ul>
-    <p id="test"></p>
-    <img id="testimg"> 
+    <div class="card">
+        <div class="searchBar">
+            <input class="cityRequest" type="text" placeholder="Enter city: ">
+            <button onclick="getCity()" class="searchButton"><img src="https://www.kindacode.com/wp-content/uploads/2020/12/search.png"></button>
+        </div>
+        <h2 class="city"></h2>
+        <h2 class="temp"></h2>
+        <div class="description">
+            <img src="" class="icon"/>
+            <p class="desc"></p>  
+        </div>
+        <p class="humidity"></p>
+        <p class="wind"></p>
+    </div>       
 </body>
 </html>
