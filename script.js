@@ -4,8 +4,14 @@ var city;
 var data;
 var request_url;
 
+document.querySelector(".cityRequest").addEventListener("keyup", function(event) {
+    if(event.key === "Enter") {
+        getCity();
+    }
+});
+
 function getCity() {
-    city = document.getElementById("cityRequest").value;
+    city = document.querySelector(".cityRequest").value;
     apiCall(city);
 }
 function apiCall(city) {
@@ -18,24 +24,23 @@ function apiCall(city) {
     request.onload = () => {
         if(request.status === 200) {
             var data = request.response;
+            //city
+            document.querySelector(".city").innerText = "Weather in " + data["name"];
             //temperature
-            var temp = data["main"]["temp"];
+            document.querySelector(".temp").innerText = Math.round(data["main"]["temp"] - 273.15) + "°C";
             //Overall weather (Ex: cloudy,sunny,etc)
-            var desc = data["weather"][0]["description"];
+            document.querySelector(".desc").innerText = data["weather"][0]["description"];
             //County
-            var country = data["sys"]["country"];
+            country = data["sys"]["country"];
             //wind speed
-            var windSpeed = data["wind"]["speed"];
+            document.querySelector(".wind").innerText = "Wind speed: " + data["wind"]["speed"] + " km/h";
             //feels like
-            var feelsLike = data["main"]["feels_like"];
+            feelsLike = data["main"]["feels_like"];
             //humidity
-            var humidity = data["main"]["humidity"];
+            document.querySelector(".humidity").innerText = "Humidity: " + data["main"]["humidity"] + "%";
 
             //icon
-            //document.getElementById("testimg").innerHTML = data["weather"][0]["icon"];
-
-
-            document.getElementById("test").innerHTML = humidity;
+            document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + data["weather"][0]["icon"] + ".png";
             
         }
         else {
