@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 120%;
+    background: linear-gradient(rgb(47,150,163),rgb(48,62,143));
+}
+
+.card {
+    background-color: rgba(12, 12, 12, .75);
+    color: white;
+    padding: 3em;
+    border-radius: 30px;
+    width: 60%;
+    margin: 1em;
+    height: 40%;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+input.cityRequest {
+    padding-right: 1em;
+    width: 50%;
+    border: none;
+    outline: none;
+    padding: .4em 1em;
+    border-radius: 20px;
+    background-color: rgb(221, 221, 221);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 110%;
+}
+
+button {
+    margin: 1em;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 249, 249);
+}
+
+button img {
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+.description {
+    display: flex;
+    padding-top: 10px;
+    text-transform: capitalize;
+}
+
+.desc {
+    position: relative;
+    padding-left: 1em;
+    bottom: -15px;
+}
+
+.city {
+    padding-bottom: 20px;
+}
+
+.humidity {
+    padding-top: 30px;
+}
+
+.wind {
+    padding-top: 10px;
+}
+
+.temp {
+    padding-bottom: 5px;
+}
