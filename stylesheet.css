@@ -9,16 +9,20 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 120%;
     background: linear-gradient(rgb(47,150,163),rgb(48,62,143));
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .card {
-    background-color: rgba(12, 12, 12, .75);
+    background-color: rgba(12, 12, 12, .6);
     color: white;
-    padding: 3em;
+    padding: 2em;
     border-radius: 30px;
-    width: 60%;
+    width: 55%;
     margin: 1em;
-    height: 40%;
+    height: 10%;
+    position: absolute;
+    transform: translateY(-6vh);
 }
 
 .searchBar {
@@ -39,6 +43,7 @@ input.cityRequest {
     font-family: 'Open Sans', sans-serif;
     font-size: 110%;
 }
+
 
 button {
     margin: 1em;
@@ -85,4 +90,82 @@ button:hover {
 
 .temp {
     padding-bottom: 5px;
+}
+
+#container {
+    position:absolute;
+    background-color: white;
+    border-radius: 5em;
+    margin-bottom: 80vh;
+
+    height: 13vh;
+    width: 35vh;
+    box-shadow: 10px 10px rgb(0,0,0,0.2);
+    animation: move 25s linear infinite;
+    
+}
+#container2 {
+    position:absolute;
+    background-color: white;
+    border-radius: 4em;
+    margin-bottom: 40vh;
+
+    height: 15vh;
+    width: 40vh;
+    box-shadow: 10px 10px rgb(0,0,0,0.2);
+    animation: move2 15s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-90vw);
+    }
+    100% {
+        transform: translate(90vw);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: translate(-90vw);
+    }
+    100% {
+        transform: translate(90vw);
+    }
+}
+
+#ground {
+    position: absolute;
+    height: 10vh;
+    width: 100%;
+    background: radial-gradient( circle 759px at -6.7% 50%, rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
+    margin-top:100vh;
+}
+
+
+#building1 {
+    height: 30vh;
+    width: 10vh;
+    background-color: black;
+    transform: translateX(10vh) translateY(30vh);
+
+}
+
+#building2 {
+    height: 28vh;
+    width: 10vh;
+    background-color: black;
+    transform: translate(-15vh,32vh)
+}
+#building3 {
+    height: 28vh;
+    width: 12vh;
+    background-color: black;
+    transform: translate(-40vh,32vh)
+}
+#building4 {
+    height: 28vh;
+    width: 10vh;
+    background-color: black;
+    transform: translate(0vh,32vh)
 }
