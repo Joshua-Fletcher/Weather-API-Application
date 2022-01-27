@@ -11,6 +11,7 @@ document.querySelector(".cityRequest").addEventListener("keyup", function(event)
 });
 
 function getCity() {
+    
     city = document.querySelector(".cityRequest").value;
     apiCall(city);
 }
@@ -38,9 +39,17 @@ function apiCall(city) {
             feelsLike = data["main"]["feels_like"];
             //humidity
             document.querySelector(".humidity").innerText = "Humidity: " + data["main"]["humidity"] + "%";
+            //main weather description
+            var mainDesc = data["weather"][0]["main"];
 
             //icon
             document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + data["weather"][0]["icon"] + ".png";
+            
+            document.querySelector(".card").style = "height: 40%";
+  
+
+            var cloud = document.getElementById("#container");
+
             
         }
         else {
